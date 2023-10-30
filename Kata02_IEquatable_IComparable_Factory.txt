@@ -1,0 +1,97 @@
+Kata02_IEquatable_IComparable_Factory
+
+Du ska modellera Medlemmar i ett Hotell lojalitets program. Du gör detta genom att skapa en class som
+representerar en medlem (csMember) och en class som innehåller en lista på medlemmar (csMemberList)
+Du ska även implementera relevanta Interfaces för Member och MemberList samt IEquatable<IMember> and IComparable <IMember>
+för .NET list hantering, tex Sort(). Slutligen initierar du en instanser av Member och MemberList initierade med
+relevant men slumpmässig data att implementera en Seed() i csMember och class factory i csMemberList.
+
+1. Skapa ett nytt projekt som heter "Kata02_IEquatable_IComparable_Factory".
+2. Skapa en ny Git repository lokalt (git commit) och på Github
+3. Skapa en Git Branch som du kallar workingproject. Gör git checkout till den nyskapade Branchen
+
+Nu har du en körbar startpunkt
+------------------------------
+3. Deklarera ett interface, IMember, som definierar
+	- Medlemmens för- och efternamn (property get; set;) av typen string
+	- Medlemmens bonusnivå (property get; set;) av typen enum MemberLevel {Blue, Silver, Gold, Platinum} 
+	- Datum medlemskapet startades (property get; set;) av typen DateTime
+    - public IMember Seed(csSeedGenerator _seeder) så att du kan skapa random seed
+	- Tänk på att deklarera enum typen MemberLevel i samma fil som IMember då de hör tillsammans
+	- Gör en git commit utan push
+
+4. Skriv definitionen av IMember så att IMember måste implementera IEquitable<IMember> och IComparable<IMember>
+	- Gör en git commit utan push
+
+5. Implementera IMember i en class csMember
+	- Implementera IComparable så att medlemmar sorteras först efter bonusnivå och sedan medlemsdatum
+	- Implementera en constructor som skapar tom instans
+	- Implementera en copy constructor
+	- Override ToString() för att skriva ut medlemsdata
+	- Implementera IEquatable<>
+		- Kom ihåg legacy:
+			- override bool Equals(object obj) => Equals(obj as IMember);
+			- override int GetHashCode() => ....;
+	- Implementera Seed() så att random data sätts och ifyllda instansen returneras
+	- Gör en git commit utan push - namnge din commit till Interfaces finalized
+		
+6. Skriv några kodrader i Program.Main() som testar att skapa instanser av Member.
+	- För member variablerna använd typen IMember
+	- Välj alla lokala git commits och gör en git squash
+	- Gör en push och jämför din lokala repo med din github repo
+
+7. Gör git checkout till master branch och se att urspungskoden är oförändrad. Kör ursprungskoden.
+	Gör git checkout till workingproject för att ta dig tillbaka till rätt kodbranch
+
+8. Deklarara ett Interface IMemberList som definierar
+	- Metod, Count(), som returnerar totala antalet medlemmar
+	- Metod, Count(int year), som returnerar totala antalet medlemmar skapade under året "year"
+	- Metod, Sort() 
+	- en property class indexer som returnerar en IMember
+	- Gör en git commit utan push
+
+9. Implementera IMemberList i en class, csMemberList
+	- Förutom när du skapar en instans av csMember, använd typen IMember istf csMember
+	- innehåller en tom private List<IMember> _members = new List<IMember>
+	- En tom constructor
+	- Implementera en copy constructor
+	- Implementera class indexern så att 
+	- Override ToString() för att skriva ut IMembers i kluster om 10 medlemmar
+	- Gör en git commit utan push
+
+10. Deklarera en class factory i csMemberList som skapar en instans av csMemberList med en lista av
+   NrOfMembers instanser av csMembers slumpmässigt ifyllda.
+	- I MemberList deklarera en public static class Factory
+	- I Factory deklarera en public static Member CreateRandom(int NrOfMembers) som
+		- Skapar en instans av MemberList med NrOfMembers medlemmar
+		- I en Loop skapar och lägger till members genom att köra new csMember().Seed()
+		- Returnerar den nyskapade och ifyllda instansen av MemberList
+	- Gör en git commit utan push
+
+11. Skriv några kodrader i Program.Main() som skapar en sorterad medlemslista för Hilton med 20 medlemmar
+   och en för Radisson med 20 medlemmar
+   - list variablerna använd IMemberList
+	- Gör en git commit utan push
+
+12. Skriv ut Medlem index 0 från Radisson och Hilton listan
+	- Välj alla lokala git commits och gör en git squash
+	- Gör en push och jämför din lokala repo med din github repo
+
+13. Nu när du är nöjd med din kod i branch workingproject är det dags att göra en git merge för att slå ihop den med master branchen
+	Gör en checkout till master branchen
+	Gör git merge workingproject into master
+	Resolve any conflicts
+	Undersök och förstå innehållet i staged changes.
+	Gör Commit staged changes.
+
+Voila!! - du har nu integrerat InheritanceRefracture i din master brach
+-----------------------------------------------------------------------
+
+24. Ta bort branchen Inheritance genom att göra em checkout till master branchen och göra delete på Inheritance
+
+
+
+Träna, Träna, Träna. Ovan moment ska jobbas in i långtidsminne och muskelminne
+Lycka till!
+
+ 
