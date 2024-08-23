@@ -1,5 +1,9 @@
-﻿using System;
-namespace Helpers
+using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Seido {
+namespace Utilities {
+namespace ConsoleInput
 {
     public static class csConsoleInput
     {
@@ -51,16 +55,42 @@ namespace Helpers
                 {
                     return true;
                 }
+                else if (string.IsNullOrEmpty(sInput) || string.IsNullOrWhiteSpace(sInput)
+                    || (sInput == "Q") || sInput == "q")
+                {
+                    return false;
+                }
                 else if (sInput != "Q" && sInput != "q")
                 {
                     Console.WriteLine("Wrong input, please try again.");
                 }
             }
-            while ((sInput != "Q" && sInput != "q"));
-            return false;
+            while (true);
+        }
+
+        public static bool TryReadEnum<TEnum>(string question, out TEnum answer) where TEnum : struct
+        {
+            //Prepare submenu for the various Enum Names
+            var _names = typeof(TEnum).GetEnumNames();
+            var _subMenu = "";
+            var _mi = 1;
+            foreach (var item in _names)
+            {
+                _subMenu += $"\n   {_mi++} - {item}";
+            }
+
+            //Ask the user to enter an integer as submenu choice
+            int _intAnswer = default;
+            bool _continue = TryReadInt32(question + _subMenu + "\n", 1, _names.Length, out _intAnswer);
+
+            //Convert menu choice to TEnum
+            answer = Enum.Parse<TEnum>(_names[_intAnswer-1]);
+
+            return _continue;
+
         }
         #endregion
     }
 
 }
-
+}}

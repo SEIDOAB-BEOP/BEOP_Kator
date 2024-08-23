@@ -1,4 +1,5 @@
-﻿namespace Kata04_Immutability
+﻿using Seido.Utilities.SeedGenerator;
+namespace Kata04_Immutability
 {
     public record ImmRecordMember (string FirstName, string LastName, MemberLevel Level, DateTime Since) : IMember
     {

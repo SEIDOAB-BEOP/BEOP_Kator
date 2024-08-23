@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Seido.Utilities.SeedGenerator;
 namespace Kata04_Immutability
 {
     public interface IMemberList

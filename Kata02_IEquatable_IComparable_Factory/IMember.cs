@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Helpers;
+using Seido.Utilities.SeedGenerator;
 
 namespace Kata02_IEquatable_IComparable_Factory
 {

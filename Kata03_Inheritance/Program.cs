@@ -1,4 +1,6 @@
-﻿using Kata03_Inheritance;
+﻿using Seido.Utilities.SeedGenerator;
+
+using Kata03_Inheritance;
 
 //Notice all variables are of type IMember not IRadissonMember etc, But Benefits
 //is written out correctly due to polyforfism

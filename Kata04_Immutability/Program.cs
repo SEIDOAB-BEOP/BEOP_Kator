@@ -1,4 +1,5 @@
-﻿using Kata04_Immutability;
+﻿using Seido.Utilities.SeedGenerator;
+using Kata04_Immutability;
 
 Console.WriteLine("Create a couple of immutable members");
 

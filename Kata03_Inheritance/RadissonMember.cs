@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Seido.Utilities.SeedGenerator;
+
 namespace Kata03_Inheritance
 {
     //Notice I have inheritance (Member) and interface (IRadissonMember).

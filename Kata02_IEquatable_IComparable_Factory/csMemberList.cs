@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Helpers;
+using Seido.Utilities.SeedGenerator;
 
 namespace Kata02_IEquatable_IComparable_Factory
 {

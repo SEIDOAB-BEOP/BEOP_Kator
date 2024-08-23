@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata03_Inheritance", "Kata0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kata04_Immutability", "Kata04_Immutability\Kata04_Immutability.csproj", "{56E13A12-B6F0-40EF-B288-5A0D0139C8EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "Helpers\Helpers.csproj", "{BEE0D1D1-BA71-4EE8-8D5A-21B3FB63A705}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "seedGenerator", "seedGenerator\seedGenerator.csproj", "{BEE0D1D1-BA71-4EE8-8D5A-21B3FB63A705}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

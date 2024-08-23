@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Seido.Utilities.SeedGenerator;
 
 namespace Kata04_Immutability
 {

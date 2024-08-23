@@ -1,4 +1,4 @@
-﻿using Helpers;
+﻿using Seido.Utilities.SeedGenerator;
 using Kata02_IEquatable_IComparable_Factory;
 
 var rnd = new csSeedGenerator();
